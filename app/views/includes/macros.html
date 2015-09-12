@@ -1,25 +1,5 @@
 
 
-{% macro radio_buttons(i) %}
-  {% for x in i.options %}
-    {% if loop.first %}
-  <div class="form-group inline-form-groups">
-    <p class="form-hint">Select one:</p>
-      <div class="form-group">
-    {% endif %}
-        <input type="radio" id="{{ i.id }}-{{ loop.key }}" name="{{ i.id }}" value="{{ i.id }}-{{ loop.key }}"> 
-        <label class="form-label form-control-radio" for="{{ i.id }}-{{ loop.key }}">
-          {{ x }}
-        </label>
-    {% if loop.last %}      
-    </div>
-  </div>
-    {% endif %}
-  {% endfor %}
-{% endmacro %}
-
-
-
 {% macro timeline(i) %}
 
 
@@ -34,7 +14,12 @@
     <tr>
       <td colspan="2">Date</td>
       {% for a, b in timelines %}
-      <td class="content width-1-{{ timelines.length }}">{{ b.name }}</td>
+
+      <td class="content width-1-{{ timelines.length }}">
+        {{ b.name }} 
+        {{ b.dob|date('jS \o\f F') }}
+
+      </td>
       {% endfor %} 
     </tr>
   </thead>
