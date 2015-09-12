@@ -1,0 +1,62 @@
+
+
+{% macro radio_buttons(i) %}
+  {% for x in i.options %}
+    {% if loop.first %}
+  <div class="form-group inline-form-groups">
+    <p class="form-hint">Select one:</p>
+      <div class="form-group">
+    {% endif %}
+        <input type="radio" id="{{ i.id }}-{{ loop.key }}" name="{{ i.id }}" value="{{ i.id }}-{{ loop.key }}"> 
+        <label class="form-label form-control-radio" for="{{ i.id }}-{{ loop.key }}">
+          {{ x }}
+        </label>
+    {% if loop.last %}      
+    </div>
+  </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro checkboxes(i) %}
+  {% for x in i.options %}
+    {% if loop.first %}
+  <div class="form-group">
+    <p class="form-hint">Select all that apply:</p>
+      <div class="form-group">
+    {% endif %}
+        <input type="checkbox" id="{{ i.id }}-{{ loop.key }}" value="{{ i.id }}-{{ loop.key }}"> 
+        <label class="form-label form-control-checkbox" for="{{ i.id }}-{{ loop.key }}">
+          {{ x }}
+        </label>
+    {% if loop.last %}      
+    </div>
+  </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+
+{% macro date(i) %}
+  <div class="inline-form-groups">
+
+    <p class="form-hint">{{ i.hint }}</p>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ i.id }}-day">Day</label>
+      <input class="form-control form-control-2-chars" id="{{ i.id }}-day" type="number" pattern="[0-9]*" min="0" max="31">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ i.id }}-month">Month</label>
+      <input class="form-control form-control-4-chars" id="{{ i.id }}-month" type="number" pattern="[0-9]*" min="0" max="12">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="{{ i.id }}-year">Year</label>
+      <input class="form-control form-control-4-chars" id="{{ i.id }}-year" type="number" pattern="[0-9]*" min="0" max="2015">
+    </div>
+  </div>
+{% endmacro %}
+</fieldset>

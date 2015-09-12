@@ -1,0 +1,69 @@
+
+
+{% macro radio_buttons(i) %}
+  {% for x in i.options %}
+    {% if loop.first %}
+  <div class="form-group inline-form-groups">
+    <p class="form-hint">Select one:</p>
+      <div class="form-group">
+    {% endif %}
+        <input type="radio" id="{{ i.id }}-{{ loop.key }}" name="{{ i.id }}" value="{{ i.id }}-{{ loop.key }}"> 
+        <label class="form-label form-control-radio" for="{{ i.id }}-{{ loop.key }}">
+          {{ x }}
+        </label>
+    {% if loop.last %}      
+    </div>
+  </div>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+
+
+{% macro timeline(i) %}
+
+
+
+  {% set months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %}
+  {% set numYears = i.endYear - i.startYear +1 %}
+  {% set yearsArray = Array(numYears) %}
+  {% set timelines = i.timelines %}
+
+<table class="timeline">
+  <thead>
+    <tr>
+      <td colspan="2">Date</td>
+      {% for a, b in timelines %}
+      <td class="content width-1-{{ timelines.length }}">{{ b.name }}</td>
+      {% endfor %} 
+    </tr>
+  </thead>
+
+  <tbody>
+
+  {% for x, y in yearsArray %}
+
+  {% for month in months %}
+    {% if loop.first %}
+    <tr class="new-year">
+      <td class="year" rowspan="12" id="date-{{ year }}">{{ x + i.startYear }}</td>
+      <td class="month" id="date-{{ x + i.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
+      {% for a, b in timelines %}
+      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + i.startYear }}-{{ loop.key + 1 }}"></td>
+      {% endfor %} 
+    </tr>
+    {% else %}
+    <tr>
+      <td class="month" id="date-{{ x + i.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
+      {% for a, b in timelines %}
+      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + i.startYear }}-{{ loop.key + 1 }}"></td>
+      {% endfor %} 
+    </tr>
+    {% endif %}
+  {% endfor %} 
+  {% endfor %} 
+  </tbody>
+</table>
+
+
+{% endmacro %}

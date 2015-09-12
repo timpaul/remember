@@ -1,0 +1,41 @@
+{% extends 'templates/layout.html' %}
+{% import 'includes/macros.html' as macro %}
+
+{% block pageTitle %}Remember&hellip;{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+
+
+   {{ macro.timeline({
+
+    startYear: 1976,
+    endYear: 2015,
+    timelines: [
+    	{
+    		id: 1,
+			name: 'Tim'
+		},
+    	{
+    		id: 2,
+			name: 'Sally'
+		},
+    	{
+    		id: 3,
+			name: 'Shawn'
+		},
+    	{
+    		id: 4,
+			name: 'Trevor'
+		}
+	]
+    
+  })}}
+
+
+
+</main>
+
+{% endblock %}

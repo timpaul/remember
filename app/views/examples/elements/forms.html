@@ -1,0 +1,44 @@
+{% extends 'templates/nhs_layout.html' %}
+{% import 'includes/form_macros.html' as form %}
+
+{% block content %}
+<main id="content" role="main" class="new-styles">
+
+  <h1 class="heading-xlarge">Example form questions</h1>
+
+    <form action="/" method="post" class="form">
+
+
+      {% include "includes/forms/name.html" %}
+
+      {% include "includes/forms/address.html" %}
+
+      {% include "includes/forms/date-of-birth.html" %}
+
+      {% include "includes/forms/preferred-contact-method.html" %}
+
+      {% include "includes/forms/create-a-password.html" %}
+
+      {% include "includes/forms/radios-binary.html" %}
+
+      {% include "includes/forms/pounds-per-time-period.html" %}
+
+      {% include "includes/forms/checkboxes-fruit.html" %}
+
+      {% include "includes/forms/radios-fruit.html" %}
+
+      {% include "includes/forms/textarea-fruit.html" %}
+
+      {% include "includes/forms/side-filters.html" %}
+
+      <!-- Submit -->
+      <div class="form-group">
+        <a class="button" href="activate-account">Continue</a>
+      </div>
+
+  </form>
+
+
+
+</main>
+{% endblock %}

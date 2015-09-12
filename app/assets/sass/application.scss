@@ -1,0 +1,90 @@
+// Import GOV.UK elements, this will import the frontend toolkit and some base styles.
+// Take a look at elements.scss to see which files are imported.
+@import 'elements';
+
+// Import modules specific to this service
+
+@import "modules/shame";
+@import "modules/for-elements";
+@import "modules/form-navigation";
+@import "modules/other-specify";
+@import "modules/radios-and-checkboxes";
+@import "modules/auto-suggest";
+@import "modules/select-boxes";
+
+
+body{
+	margin: 0;
+	font-family: sans-serif;
+	padding-bottom: 500px;
+}
+
+#global-header{
+    position: fixed;
+	padding: $gutter;
+	padding-left: 34px;
+    background-color: #fff;
+    width: 100%;
+    border-bottom: 2px solid $border-colour;
+	a{
+		text-decoration: none;
+		font-weight: bold;
+		color: $text-colour;
+    	font-size: 16px;
+	}
+}
+
+#global-header a:hover{
+	text-decoration: underline;
+}
+
+main {
+	padding-top: 78px;
+}
+
+// TIMELINE
+
+.timeline{
+	border-top: 1px solid $border-colour;
+	border-bottom: 2px solid $border-colour;
+
+	.new-year td{
+		border-top: 2px solid $border-colour;
+	}
+
+	.year{
+		font-weight: bold;
+		font-size: 24px;
+		padding: 0 10px 0 10px;
+		text-align: center;
+	}
+	.month{
+
+	}
+	.content{
+		padding-left: 10px;
+		border-left: 1px solid $border-colour;
+	}
+
+	.content:read-write:focus {
+		outline: none;
+     	//background: #ffffcc;
+	}
+
+	thead td{
+		font-weight: bold;
+		font-size: 16px;
+		text-align: center;	
+	}
+}
+
+.width-1-1{ width: percentage(1/1) }
+.width-1-2{ width: percentage(1/2) }
+.width-1-3{ width: percentage(1/3) }
+.width-1-4{ width: percentage(1/4) }
+.width-1-5{ width: percentage(1/5) }
+
+
+
+
+
