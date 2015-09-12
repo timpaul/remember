@@ -1,13 +1,13 @@
 
 
-{% macro timeline(i) %}
+{% macro timeline(data) %}
 
 
 
   {% set months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] %}
-  {% set numYears = i.endYear - i.startYear +1 %}
+  {% set numYears = data.endYear - data.startYear +1 %}
   {% set yearsArray = Array(numYears) %}
-  {% set timelines = i.timelines %}
+  {% set timelines = data.timelines %}
 
 <table class="timeline">
   <thead>
@@ -32,16 +32,16 @@
     {% if loop.first %}
     <tr class="new-year">
       <td class="year" rowspan="12" id="date-{{ year }}">{{ x + i.startYear }}</td>
-      <td class="month" id="date-{{ x + i.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
+      <td class="month" id="date-{{ x + data.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
       {% for a, b in timelines %}
-      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + i.startYear }}-{{ loop.key + 1 }}"></td>
+      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + data.startYear }}-{{ loop.key + 1 }}"></td>
       {% endfor %} 
     </tr>
     {% else %}
     <tr>
-      <td class="month" id="date-{{ x + i.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
+      <td class="month" id="date-{{ x + data.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
       {% for a, b in timelines %}
-      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + i.startYear }}-{{ loop.key + 1 }}"></td>
+      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + data.startYear }}-{{ loop.key + 1 }}"></td>
       {% endfor %} 
     </tr>
     {% endif %}
