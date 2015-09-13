@@ -12,13 +12,10 @@
 <table class="timeline">
   <thead>
     <tr>
-      <td colspan="2">Date</td>
+      <td colspan="2" class="date">Date</td>
       {% for a, b in timelines %}
 
-      <td class="content width-1-{{ timelines.length }}">
-        {{ b.name }} 
-        <!--{{ b.dob|date('jS \o\f F') }}-->
-
+      <td class="content width-1-{{ timelines.length }}" contenteditable="true" id="timeline-{{b.id}}">
       </td>
       {% endfor %} 
     </tr>

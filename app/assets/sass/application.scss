@@ -39,7 +39,7 @@ body{
 }
 
 main {
-	padding-top: 78px;
+	padding-top: 79px;
 }
 
 // TIMELINE
@@ -47,6 +47,31 @@ main {
 .timeline{
 	border-top: 1px solid $border-colour;
 	border-bottom: 2px solid $border-colour;
+    border-right: 1px solid $border-colour;
+    width: auto;
+	td{
+		padding: 10px;
+	}
+
+	thead{
+		position: fixed;
+		width:	100%;
+		td{
+			font-weight: bold;
+			font-size: 16px;
+			text-align: center;
+			background-color: white;
+		}
+	}
+
+	tbody{
+		display: block;
+		margin-top: 40px;
+	}
+
+	td.date{
+		width: 151px;
+	}
 
 	.new-year td{
 		border-top: 2px solid $border-colour;
@@ -55,15 +80,18 @@ main {
 	.year{
 		font-weight: bold;
 		font-size: 24px;
-		padding: 0 15px 0 15px;
+		//padding: 0 15px 0 15px;
+		width: 100px;
 		text-align: center;
 	}
 	.month{
-		padding-right: 5px;
+		//padding-right: 5px;
+		width: 31px;
 	}
 	.content{
 		padding-left: 10px;
 		border-left: 1px solid $border-colour;
+		width: 200px;
 	}
 
 	.content:read-write:focus {
@@ -71,18 +99,13 @@ main {
      	//background: #ffffcc;
 	}
 
-	thead td{
-		font-weight: bold;
-		font-size: 16px;
-		text-align: center;	
-	}
 }
 
 // Percentage width classes, for up to 10 timelines
 
 @for $i from 1 through 10{
   .width-1-#{$i}{
-    width: percentage(1/$i);
+    //width: percentage(1/$i);
   }
 }
 

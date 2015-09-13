@@ -1356,56 +1356,41 @@ body {
   text-decoration: underline; }
 
 main {
-  padding-top: 78px; }
+  padding-top: 79px; }
 
 .timeline {
   border-top: 1px solid #bfc1c3;
-  border-bottom: 2px solid #bfc1c3; }
+  border-bottom: 2px solid #bfc1c3;
+  border-right: 1px solid #bfc1c3;
+  width: auto; }
+  .timeline td {
+    padding: 10px; }
+  .timeline thead {
+    position: fixed;
+    width: 100%; }
+    .timeline thead td {
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      background-color: white; }
+  .timeline tbody {
+    display: block;
+    margin-top: 40px; }
+  .timeline td.date {
+    width: 151px; }
   .timeline .new-year td {
     border-top: 2px solid #bfc1c3; }
   .timeline .year {
     font-weight: bold;
     font-size: 24px;
-    padding: 0 15px 0 15px;
+    width: 100px;
     text-align: center; }
   .timeline .month {
-    padding-right: 5px; }
+    width: 31px; }
   .timeline .content {
     padding-left: 10px;
-    border-left: 1px solid #bfc1c3; }
+    border-left: 1px solid #bfc1c3;
+    width: 200px; }
   .timeline .content:read-write:focus {
     outline: none; }
-  .timeline thead td {
-    font-weight: bold;
-    font-size: 16px;
-    text-align: center; }
 
-.width-1-1 {
-  width: 100%; }
-
-.width-1-2 {
-  width: 50%; }
-
-.width-1-3 {
-  width: 33.3333333333%; }
-
-.width-1-4 {
-  width: 25%; }
-
-.width-1-5 {
-  width: 20%; }
-
-.width-1-6 {
-  width: 16.6666666667%; }
-
-.width-1-7 {
-  width: 14.2857142857%; }
-
-.width-1-8 {
-  width: 12.5%; }
-
-.width-1-9 {
-  width: 11.1111111111%; }
-
-.width-1-10 {
-  width: 10%; }
