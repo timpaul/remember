@@ -1,25 +1,14 @@
 $(document).ready(function(){
 
-  GOVUK.toggle.init();
-
-  // Initialise auto-suggest fields
-  //$('.auto-suggest').selectToAutocomplete();
-  
-
-  // Uses radio buttons to emulate a more usable select box
-  $( ".js-form-select label" ).click(function() {
-  	$( this ).closest('.js-form-select').toggleClass( "open" );
+  // Load in content from local storage on page refresh
+  $('.content[contenteditable="true"]').each(function(item){
+        $(this).html(localStorage.getItem($(this).attr('id')));
   });
 
-  // Postcode lookup
-  // Hide address list if user changes postcode
-	var lastValue = '';
-	$("#postcode").on('change keyup paste mouseup', function() {
-	    if ($(this).val() != lastValue) {
-	        lastValue = $(this).val();
-  			$( "#address-list" ).addClass("js-hidden");
-  			$( "#submit-postcode" ).removeClass("js-hidden");
-	    }
-	});
+  // Save content to local storage on keyup
+  $('.content[contenteditable="true"]').on('keyup', function(event){
+    localStorage.setItem($(this).attr('id'), $(this).html());
+  });
+
 
 });
