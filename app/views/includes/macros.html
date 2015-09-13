@@ -17,7 +17,7 @@
 
       <td class="content width-1-{{ timelines.length }}">
         {{ b.name }} 
-        {{ b.dob|date('jS \o\f F') }}
+        <!--{{ b.dob|date('jS \o\f F') }}-->
 
       </td>
       {% endfor %} 
@@ -31,7 +31,7 @@
   {% for month in months %}
     {% if loop.first %}
     <tr class="new-year">
-      <td class="year" rowspan="12" id="date-{{ year }}">{{ x + i.startYear }}</td>
+      <td class="year" rowspan="12" id="date-{{ year }}">{{ x + data.startYear }}</td>
       <td class="month" id="date-{{ x + data.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
       {% for a, b in timelines %}
       <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + data.startYear }}-{{ loop.key + 1 }}"></td>
