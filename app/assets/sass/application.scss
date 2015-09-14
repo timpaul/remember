@@ -44,6 +44,16 @@ main {
 
 // TIMELINE
 
+
+.headings{
+	@extend %contain-floats;
+	.content{
+		display: block;
+		width: 20%;
+		float: left;
+	}
+}
+
 .timeline{
 	border-top: 1px solid $border-colour;
 	border-bottom: 2px solid $border-colour;
@@ -54,8 +64,12 @@ main {
 	}
 
 	thead{
-		position: fixed;
-		width:	100%;
+		//position: fixed;
+		//width:	100%;
+		tr{
+			//display: block;
+    		//position: relative;
+		}
 		td{
 			font-weight: bold;
 			font-size: 16px;
@@ -65,8 +79,14 @@ main {
 	}
 
 	tbody{
-		display: block;
-		margin-top: 40px;
+		//display: block;
+	    //overflow: auto;
+	    /* margin-top: 40px; */
+	    /* width: 100%; */
+	    //height: 90%;
+	    .content{
+	    	//font-size: 12px;
+	    }
 	}
 
 	td.date{
@@ -83,15 +103,18 @@ main {
 		//padding: 0 15px 0 15px;
 		width: 100px;
 		text-align: center;
+		padding: 15px 0;
 	}
 	.month{
 		//padding-right: 5px;
-		width: 31px;
+		//width: 31px;
+		padding: 15px 0
 	}
 	.content{
 		padding-left: 10px;
 		border-left: 1px solid $border-colour;
-		width: 200px;
+		//width: 200px;
+		width: 20%;
 	}
 
 	.content:read-write:focus {
@@ -99,6 +122,19 @@ main {
      	//background: #ffffcc;
 	}
 
+}
+
+
+.timeline.copy{
+    position: fixed;
+    width: 50%;
+}
+
+.grid-row{
+	margin: 0;
+}
+.column-half {
+  padding: 0;
 }
 
 // Percentage width classes, for up to 10 timelines

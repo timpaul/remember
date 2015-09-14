@@ -9,10 +9,23 @@
   {% set yearsArray = Array(numYears) %}
   {% set timelines = data.timelines %}
 
+<table class="timeline copy">
+  <thead>
+    <tr>
+      <td class="content">Date</td>
+      {% for a, b in timelines %}
+
+      <td class="content width-1-{{ timelines.length }}" contenteditable="true" id="timeline-{{b.id}}">
+      </td>
+      {% endfor %} 
+    </tr>
+  </thead>
+</table>
+
 <table class="timeline">
   <thead>
     <tr>
-      <td colspan="2" class="date">Date</td>
+      <td class="content" colspan="2">Date</td>
       {% for a, b in timelines %}
 
       <td class="content width-1-{{ timelines.length }}" contenteditable="true" id="timeline-{{b.id}}">
