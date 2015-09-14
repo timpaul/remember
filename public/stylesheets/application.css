@@ -1367,7 +1367,7 @@ main {
   border-top: 1px solid #bfc1c3;
   border-bottom: 2px solid #bfc1c3;
   border-right: 1px solid #bfc1c3;
-  width: auto; }
+  width: 100%; }
   .timeline td {
     padding: 10px; }
   .timeline thead td {
@@ -1408,3 +1408,8 @@ main {
 .detailed-month-view {
   position: fixed;
   padding: 0 30px; }
+  .detailed-month-view .detailed-text {
+    max-width: 40em; }
+  .detailed-month-view .detailed-text:read-write:focus {
+    min-height: 300px;
+    outline: none; }

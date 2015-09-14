@@ -58,7 +58,7 @@ main {
 	border-top: 1px solid $border-colour;
 	border-bottom: 2px solid $border-colour;
     border-right: 1px solid $border-colour;
-    width: auto;
+    width: 100%;
 	td{
 		padding: 10px;
 	}
@@ -137,6 +137,13 @@ main {
 .detailed-month-view{	
     position: fixed;
     padding: 0 $gutter;
+    .detailed-text{
+    	max-width: 40em;
+    }
+    .detailed-text:read-write:focus {
+    	min-height: 300px;
+		outline: none;
+	}
 }
 
 
