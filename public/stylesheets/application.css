@@ -1375,9 +1375,6 @@ main {
     font-size: 16px;
     text-align: center;
     background-color: white; }
-  .timeline tbody {
-    /* margin-top: 40px; */
-    /* width: 100%; */ }
   .timeline td.date {
     width: 151px; }
   .timeline .new-year td {
@@ -1395,7 +1392,8 @@ main {
     border-left: 1px solid #bfc1c3;
     width: 20%; }
   .timeline .content:read-write:focus {
-    outline: none; }
+    outline: none;
+    background-color: #ffffcc; }
 
 .timeline.copy {
   position: fixed;
@@ -1407,3 +1405,6 @@ main {
 .column-half {
   padding: 0; }
 
+.detailed-month-view {
+  position: fixed;
+  padding: 0 30px; }

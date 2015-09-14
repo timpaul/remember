@@ -7,8 +7,18 @@ $(document).ready(function(){
 
   // Save content to local storage on keyup
   $('.content[contenteditable="true"]').on('keyup', function(event){
-    localStorage.setItem($(this).attr('id'), $(this).html());
+    var content = $(this).html()
+    localStorage.setItem($(this).attr('id'), content);
+    $('.detailed-month-view').html(content);
   });
 
+  $('.content[contenteditable="true"]').on('focus', function(event){
+    var content = $(this).html();
+    var date = $(this).data('date');
+    var timeline = localStorage.getItem($(this).data('timeline'));
+    $('.detailed-month-view .heading-large').html(date);
+    $('.detailed-month-view .heading-medium').html(timeline);
+    $('.detailed-month-view .detailed-text').html(content);
+  });
 
 });

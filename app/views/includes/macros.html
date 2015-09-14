@@ -44,14 +44,14 @@
       <td class="year" rowspan="12" id="date-{{ year }}">{{ x + data.startYear }}</td>
       <td class="month" id="date-{{ x + data.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
       {% for a, b in timelines %}
-      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + data.startYear }}-{{ month }}"></td>
+      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + data.startYear }}-{{ month }}"data-date="{{ month }} {{ x + data.startYear }}" data-timeline="timeline-{{b.id}}"></td>
       {% endfor %} 
     </tr>
     {% else %}
     <tr>
       <td class="month" id="date-{{ x + data.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
       {% for a, b in timelines %}
-      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + data.startYear }}-{{ month }}"></td>
+      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + data.startYear }}-{{ month }}" data-date="{{ month }} {{ x + data.startYear }}" data-timeline="timeline-{{b.id}}"></td>
       {% endfor %} 
     </tr>
     {% endif %}
