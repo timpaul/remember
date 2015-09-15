@@ -20,13 +20,13 @@ module.exports = {
 				},
 		    	{
 		    		id: 3,
-					name: 'Shawn',
-		            dob: '1952-5-27'
+					name: 'Trevor',
+		            dob: '1948-12-12'
 				},
 		    	{
 		    		id: 4,
-					name: 'Trevor',
-		            dob: '1948-12-12'
+					name: 'Shawn',
+		            dob: '1952-5-27'
 				}
 			]
 		}

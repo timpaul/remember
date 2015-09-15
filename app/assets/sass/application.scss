@@ -105,11 +105,10 @@ main {
 
 	.content:read-write:focus {
 		outline: none;
-    	background-color: #ffffcc;
 	}
 
 	.outside-timeline{
-		background-color: $grey-3;
+		background-color: #eeefed;
 	}
 
 }
@@ -117,7 +116,9 @@ main {
 .focus-style{
 	outline: none;
     background-color: #ffffcc;
-    //border-left: 3px solid $red !important;
+    &.outside-timeline{
+		background-color: #eeefed;	
+    }
 }
 
 

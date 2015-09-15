@@ -1392,14 +1392,15 @@ main {
     border-left: 1px solid #bfc1c3;
     width: 20%; }
   .timeline .content:read-write:focus {
-    outline: none;
-    background-color: #ffffcc; }
+    outline: none; }
   .timeline .outside-timeline {
-    background-color: #dee0e2; }
+    background-color: #eeefed; }
 
 .focus-style {
   outline: none;
   background-color: #ffffcc; }
+  .focus-style.outside-timeline {
+    background-color: #eeefed; }
 
 .timeline.copy {
   position: fixed;
