@@ -1394,6 +1394,8 @@ main {
   .timeline .content:read-write:focus {
     outline: none;
     background-color: #ffffcc; }
+  .timeline .outside-timeline {
+    background-color: #dee0e2; }
 
 .focus-style {
   outline: none;
@@ -1426,3 +1428,11 @@ main {
   .detailed-month-view .placeholder-text {
     color: #6f777b;
     font-style: italic; }
+
+#settings-link {
+  float: right;
+  margin: -20px 70px 0 0; }
+  #settings-link a {
+    color: #6f777b;
+    font-weight: normal;
+    text-decoration: underline; }

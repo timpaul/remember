@@ -5,7 +5,7 @@ module.exports = {
 
   	var data =  {
   		data:{
-	  		startYear: 1976,
+	  		startYear: 1948,
 	    	endYear: 2015,
 			timelines: [
 		    	{

@@ -51,7 +51,14 @@
     <tr>
       <td class="month" id="date-{{ x + data.startYear }}-{{ loop.key + 1 }}">{{ month }}</td>
       {% for a, b in timelines %}
-      <td class="content" contenteditable="true" id="id-{{b.id}}-{{ x + data.startYear }}-{{ month }}" data-date="{{ month }} {{ x + data.startYear }}" data-timeline="timeline-{{b.id}}"></td>
+
+
+
+
+
+      <td class="content       {% if b.dob|date('Y') > x + data.startYear %}
+        outside-timeline
+      {% endif %}" contenteditable="true" id="id-{{b.id}}-{{ x + data.startYear }}-{{ month }}" data-date="{{ month }} {{ x + data.startYear }}" data-timeline="timeline-{{b.id}}"></td>
       {% endfor %} 
     </tr>
     {% endif %}

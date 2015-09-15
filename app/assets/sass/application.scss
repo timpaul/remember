@@ -108,11 +108,16 @@ main {
     	background-color: #ffffcc;
 	}
 
+	.outside-timeline{
+		background-color: $grey-3;
+	}
+
 }
 
 .focus-style{
 	outline: none;
     background-color: #ffffcc;
+    //border-left: 3px solid $red !important;
 }
 
 
@@ -163,6 +168,18 @@ main {
 	}
 }
 
+
+// Settings link
+
+#settings-link{
+    float: right;
+    margin: -20px 70px 0 0;
+    a{
+    	color: $secondary-text-colour;   	
+    	font-weight: normal;
+    	text-decoration: underline;
+    }
+}
 
 
 
