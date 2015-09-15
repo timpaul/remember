@@ -1395,6 +1395,10 @@ main {
     outline: none;
     background-color: #ffffcc; }
 
+.focus-style {
+  outline: none;
+  background-color: #ffffcc; }
+
 .timeline.copy {
   position: fixed;
   width: 50%; }
@@ -1409,7 +1413,16 @@ main {
   position: fixed;
   padding: 0 30px; }
   .detailed-month-view .detailed-text {
-    max-width: 40em; }
+    width: 100%;
+    max-width: 40em;
+    height: 300px; }
+    .detailed-month-view .detailed-text b, .detailed-month-view .detailed-text strong {
+      font-weight: bold; }
+    .detailed-month-view .detailed-text i, .detailed-month-view .detailed-text em {
+      font-style: italic; }
   .detailed-month-view .detailed-text:read-write:focus {
     min-height: 300px;
     outline: none; }
+  .detailed-month-view .placeholder-text {
+    color: #6f777b;
+    font-style: italic; }

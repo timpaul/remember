@@ -5,24 +5,31 @@ $(document).ready(function(){
         $(this).html(localStorage.getItem($(this).attr('id')));
   });
 
-  $(".detailed-month-view").hide();
-
   // Save content to local storage on keyup
   $('.content[contenteditable="true"]').on('keyup', function(event){
     var content = $(this).html()
     localStorage.setItem($(this).attr('id'), content);
   });
 
+  // Display detailed content when a month has focus
   $('.content[contenteditable="true"]').on('focus', function(event){
-  	$(".detailed-month-view").show();
-    var content = $(this).html();
-    var detailedContentID = $(this).attr('id') + '-detail'
-    var detailedContent = localStorage.getItem(detailedContentID);
+    
+    $('.content[contenteditable="true"]').removeClass('focus-style');
+    $(this).addClass('focus-style');
+
+    // Create heading from timeline name and date
     var date = $(this).data('date');
     var timeline = localStorage.getItem($(this).data('timeline'));
-    $('.detailed-month-view .heading-large .heading-timeline').html(timeline);
-    $('.detailed-month-view .heading-large .heading-date').html(date);
-    if (detailedContent == null){ detailedContent = "Type here..." };
+    $('.heading-timeline').html(timeline + ": ");
+    $('.heading-date').html(date);
+
+    // Retreive detailed content from local storge
+    var detailedContentID = $(this).attr('id') + '-detail';
+    var detailedContent = localStorage.getItem(detailedContentID);
+
+    // Display detailed content
+    if (detailedContent == null ){ detailedContent = "<span class='placeholder-text'>Enter notes here&hellip;</span>" };
+    if (detailedContent == "" ){ detailedContent = "<span class='placeholder-text'>Enter notes here&hellip;</span>" };
     $('.detailed-month-view .detailed-text').html(detailedContent).data('detailedContentID', detailedContentID);
 
   });
@@ -31,6 +38,12 @@ $(document).ready(function(){
   $('.detailed-text[contenteditable="true"]').on('keyup', function(event){
     var content = $(this).html()
     localStorage.setItem($(this).data('detailedContentID'), content);
+  });
+
+  // Remove placeholder text
+  $('.detailed-text').on('click', function(event){
+    $(this).find('.placeholder-text').remove();
+    $(this).focus();
   });
 
 });
